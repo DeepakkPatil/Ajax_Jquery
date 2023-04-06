@@ -47,4 +47,25 @@ function fetchData3()
     })
 
 }
-$('#fetch').click(fetchData3) ;
+
+
+// dynamic updation of img
+
+function fetchData4()
+{
+
+    $.get('https://dog.ceo/api/breeds/image/random', function(response) {
+        // handle success response
+       const data= response.message ;
+        console.log("4",data)
+        $('<img>',{
+            src: data,
+            style: "width: 300px; height: 300px; object-fit:'cover'"
+         }).appendTo('#container')
+    })
+
+}
+
+
+
+$('#fetch').click(fetchData4) ;
